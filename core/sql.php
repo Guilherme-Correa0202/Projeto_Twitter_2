@@ -8,7 +8,7 @@ $valores = implode(', ', array_values($dados));
 
 $instrucao.= "({$campos})";
 $instrucao .= " VALUES ({$valores})";
-
+echo $instrucao;
 return $instrucao;
 }
 

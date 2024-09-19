@@ -2,9 +2,9 @@
     require_once '../core/sql.php';
 
     $id = 1;
-    $nome = 'murilo';
-    $email = 'murilo@gmail.com';
-    $senha = '123mudar';
+    $nome = 'Guilherme';
+    $email = 'Guilherme@gmail.com';
+    $senha = '02022007';
     $dados = ['nome' => $nome,
               'email' => $email,
               'senha' => $senha];
@@ -17,17 +17,17 @@
     echo '<br>';
     print_r($criterio);
     echo '<br>';
-    
+
 
     $instrucao = insert($entidade, $dados);
     echo $instrucao.'<br>';
     
-    $instrucao = insert($entidade, $dados, $criterio);
+    $instrucao = update($entidade, $dados, $criterio);
     echo $instrucao.'<br>';
 
-    $instrucao = insert($entidade, $campos, $criterio);
+    $instrucao = select($entidade, $campos, $criterio);
     echo $instrucao.'<br>';
 
-    $instrucao = insert($entidade, $criterio);
+    $instrucao = delete($entidade, $criterio);
     echo $instrucao.'<br>';
 ?>

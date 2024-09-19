@@ -1,6 +1,6 @@
-create database Twitter2;
+create database blog;
 
-USE database Twitter2;
+USE database blog;
 
 create table Usuario(
 	id INT PRIMARY KEY AUTO_INCREMENT,
