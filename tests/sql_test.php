@@ -17,6 +17,7 @@
     echo '<br>';
     print_r($criterio);
     echo '<br>';
+    
 
     $instrucao = insert($entidade, $dados);
     echo $instrucao.'<br>';
