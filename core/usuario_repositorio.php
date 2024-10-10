@@ -39,7 +39,7 @@
             ];
 
             atualiza(
-                'usuario',
+                'Usuario',
                 $dados,
                 $criterio
             );
@@ -52,14 +52,14 @@
                 ];
                 
                 $retorno = buscar (
-                    'usuario',
+                    'Usuario',
                     ['id', 'nome', 'email', 'senha', 'adm'],
                     $criterio
                 );
 
                 if(count($retorno)>0){
                     if(crypt($senha, $salt) == $retorno[0]['senha']){
-                        $_SESSION['login']['usuario'] = $retorno[0];
+                        $_SESSION['login']['Usuario'] = $retorno[0];
                         if(!empty($_SESSION['url_retorno'])){
                             header ('Localition: ' . $_SESSION ['url_retorno']);
                             $_SESSION ['url_retorno'] = '';
@@ -86,7 +86,7 @@
                     ];
 
                     atualiza(
-                        'usuario',
+                        'Usuario',
                         $dados,
                         $criterio
                     );
@@ -108,12 +108,12 @@
                         ];
 
                         atualiza( 
-                            'usuario', $dados, $criterio
+                            'Usuario', $dados, $criterio
                         );
 
                         header('Location: ../usuarios.php');
                         exit;
                         break;
     }
-    header('Location: ../usuarios.php');
+    header('Location: ../index.php');
 ?>

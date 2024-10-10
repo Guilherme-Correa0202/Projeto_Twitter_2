@@ -38,7 +38,7 @@
                 }
                 $data_atual = date('Y-m-d H:i:s');
                 $criterio = [
-                    ['data_postagem', '<=', $data_atual]
+                    ['dataPostagem', '<=', $data_atual]
                 ];
 
                 if (!empty($busca)) {
@@ -53,19 +53,19 @@
                     'post',
                     [
                         'titulo',
-                        'data_postagem',
+                        'dataPostagem',
                         'id',
-                        '(select nome from Usuario where Usuario.id = post.Usuario_id) as nome'
+                        '(select nome from Usuario where Usuario.id = post.idUsuario) as nome'
                     ],
                     $criterio,
-                    'data_postagem DESC'
+                    'dataPostagem DESC'
                 );
                 ?>
                 <div>
                     <div class="list-group">
                         <?php
                         foreach ($posts as $post) :
-                            $data = date_create($post['data_postagem']);
+                            $data = date_create($post['dataPostagem']);
                             $data = date_format($data, 'd/m/Y H:i:s');
                         ?>
                             <a class="list-group-item list-group-item-action" href="post_detalhe.php?post=<?php echo $post['id'] ?>">

@@ -11,7 +11,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="login_formulrio.php">Login</a>
+            <a class="nav-link" href="login_formulario.php">Login</a>
         </li>
 
         <li class="nav-item">

@@ -133,7 +133,6 @@ string $ordem = null) : array
     }
 
     $instrucao = select($entidade, $campos, $coringa_criterio, $ordem);
-
     $conexao = conecta();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
@@ -143,7 +142,7 @@ string $ordem = null) : array
             $comando .= "'" . implode('', $tipo). "'";
             $comando .= ', $' . implode(', $', $campos_criterio);
             $comando .= ');';
-
+        //echo $comando;
         eval($comando);
     }
 
