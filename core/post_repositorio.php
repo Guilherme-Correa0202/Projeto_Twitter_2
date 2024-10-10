@@ -13,22 +13,21 @@
 
     foreach($_GET as $indice => $dado) 
     {
-        $$indice = limparDados($dados);
+        $$indice = limparDados($dado);
     }
 
     $id = (int)$id;
-
     switch($acao){
         case 'insert':
-            $dados =[
+            $dados = [
                 'titulo' => $titulo,
                 'texto' => $texto,
-                'data_postagem' => "$data_postagem $hora_postagem",
-                'usuario_id' => $_SESSION['login']['usuario']['id']
+                'dataPostagem' => "$dataPostagem $horaPostagem",
+                'idUsuario' => $_SESSION['login']['Usuario']['id']
             ];
 
             insere(
-                'post',
+                'Post',
                 $dados
             );
             break;
@@ -37,8 +36,8 @@
                 $dados = [
                     'titulo' => $titulo,
                     'texto' => $texto,
-                    'data_postagem' => "$data_postagem $hora_postagem",
-                    'usuario_id' => $_SESSION['login']['usuario']['id']
+                    'dataPostagem' => "$dataPostagem $horaPostagem",
+                    'idUsuario' => $_SESSION['login']['Usuario']['id']
                 ];
 
                 $criterio = [
@@ -46,7 +45,7 @@
                 ];
 
                 atualiza(
-                    'post',
+                    'Post',
                     $dados,
                     $criterio
                 );
@@ -58,10 +57,10 @@
                     ];
 
                     deleta(
-                        'post',
+                        'Post',
                         $criterio
                     );
                     break;
     }
-    header('Location: ../index.php');
+   header('Location: ../index.php');
 ?>

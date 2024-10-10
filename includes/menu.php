@@ -19,7 +19,7 @@
         </li>
 
         <?php
-        if((isset($_SESSION['login'])) && ($_SESSION['login']['usuario']['adm'] === 1)): 
+        if((isset($_SESSION['login'])) && ($_SESSION['login']['Usuario']['adm'] === 1)): 
         ?>
 
         <li class="nav-item">

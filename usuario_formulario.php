@@ -21,7 +21,7 @@
                     require_once 'core/mysql.php';
 
                     if (isset($_SESSION['login'])) {
-                        $id = (int) $_SESSION['login']['usuario']['id'];
+                        $id = (int) $_SESSION['login']['Usuario']['id'];
                         $criterio = [['id', '=', $id]];
                         $retorno = buscar('usuario', ['id', 'nome', 'email'], $criterio);
                         $entidade = $retorno[0];

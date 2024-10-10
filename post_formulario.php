@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <title>Post | Projeto para web com PHP</title>
     <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/bootstrap-4.2.1-dist/css/bootstrap.min.css">
@@ -41,15 +40,16 @@
                         ['*'],
                         $criterio
                     );
+                    $entidade = $retorno[0];
                 }
             ?>
             <h2>Post</h2>
-            <form action="post" action="core/post_repositorio.php">
+            <form method="post" action="core/post_repositorio.php" >
                 <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                 <input type="hidden" name="id"  value="<?php $entidade['id'] ?? '' ?>">
                 <div class="form-group">
                     <label for="titulo">Titulo</label>
-                    <input form="form-control" type="text" require = "required" name="titulo" id="titulo" value="<?php echo $entidade['titulo'] ?? '' ?>">
+                    <input class="form-control" type="text" require = "required" name="titulo" id="titulo" value="<?php echo $entidade['titulo'] ?? '' ?>">
                 </div>
                 <div class="form-group">
                     <label for="texto">Texto</label>
