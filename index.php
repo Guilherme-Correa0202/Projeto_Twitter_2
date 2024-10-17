@@ -46,11 +46,11 @@
                         'AND',
                         'texto',
                         'like',
-                        '%{$busca}%'
+                        "%{$busca}%"
                     ];
                 }
                 $posts = buscar(
-                    'post',
+                    'Post',
                     [
                         'titulo',
                         'dataPostagem',
